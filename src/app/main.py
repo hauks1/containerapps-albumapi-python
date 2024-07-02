@@ -52,9 +52,6 @@ albums = [
         14.99,
         "https://aka.ms/albums-containerappslogo",
     ),
-    Album(
-        7, "Notin forks", "Commitas", 20.49, "https://aka.ms/albums-containerappslogo"
-    ),
 ]
 
 
