@@ -1,5 +1,5 @@
 from typing import Optional
-
+from fastapi.responses import RedirectResponse
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -57,9 +57,21 @@ albums = [
 
 @app.get("/")
 def read_root():
-    return {"Access /albums to see the list of albums"}
+    return {"Access /summerinterns to see summerinternpage"}
+
+
+@app.get("/summerinterns")
+def display_summerinterns():
+    return RedirectResponse(url="https://www.youtube.com/watch?v=xvFZjo5PgG0")
 
 
 @app.get("/albums")
 def get_albums():
     return albums
+
+
+# Run server just for testing
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="localhost", port=8080)
